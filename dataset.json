@@ -1,0 +1,267 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Ciao",
+        "Ehy",
+        "ciao",
+        "Ci",
+        "Salve",
+        "Buonasera",
+        "Buongiorno",
+        "Buon pomeriggio",
+        "Buona sera",
+        "Buon giorno",
+        "Buon pomeri"
+      ],
+      "responses": [
+        "Ciao",
+        "Ehy, posso esserti utile?",
+        "Ciao, come posso aiutarti?",
+        "Salve, come posso aiutarti?"
+      ]
+    },
+    {
+      "tag": "ringraziamenti",
+      "patterns": [
+        "Grazie",
+        "Grazie mille",
+        "Grazie mille!",
+        "Grazie!",
+        "Grazie per l'aiuto",
+        "Sei stato di grande aiuto",
+        "Grazie per l'aiuto!"
+      ],
+      "responses": [
+        "Di nulla",
+        "E' stato un piacere aiutarti",
+        "Prego",
+        "Non c'è di che"
+      ]
+    },
+    {
+      "tag": "posizione_hotel",
+      "patterns": [
+        "Dove si trova l'hotel?",
+        "Dov'è l'hotel?",
+        "Dove si trova l'hotel",
+        "Dov'è l'hotel",
+        "Dove vi trovate?",
+        "Dove siete?",
+        "In che città siete?",
+        "In che città vi trovate?",
+        "In che città siete",
+        "In che città vi trovate"
+      ],
+      "responses": [
+        "L'hotel si trova in una delle più belle zone della città di Cesenatico, in luogo tranquillo, a pochi passi dal caratteristico centro del paese e dal famoso Portocanale Leonardesco. A 50 metri dal mare e vicino alla stazione ferroviaria e alla fermata degli autobus.",
+        "La nostra struttura si trova in una zona incantevole, a due passi dal centro storico di Cesenatico e dal famoso Portocanale Leonardesco. Inoltre, siamo a soli 50 metri dal mare e vicino alle principali fermate dei mezzi pubblici.",
+        "La posizione dell'hotel è davvero privilegiata: situato in una zona tranquilla e panoramica, dista pochi minuti a piedi dal caratteristico centro storico di Cesenatico e dal celebre Portocanale Leonardesco. Inoltre, siamo a soli 50 metri dalla spiaggia e ben serviti dai mezzi pubblici.",
+        "Siamo orgogliosi di offrire ai nostri ospiti una posizione invidiabile: l'hotel si trova in una delle zone più suggestive della città di Cesenatico, vicino al centro storico e al famoso Portocanale Leonardesco. Inoltre, la struttura dista appena 50 metri dal mare e dalle principali fermate dei mezzi pubblici.",
+        "Se siete alla ricerca di una posizione comoda e suggestiva, l'hotel è il posto giusto per voi. Situato in una zona tranquilla e pittoresca, dista pochi passi dal centro storico di Cesenatico e dal celebre Portocanale Leonardesco. Inoltre, la struttura si trova a soli 50 metri dalla spiaggia e ben collegata ai mezzi pubblici.",
+        "La nostra posizione è perfetta per coloro che vogliono godere della bellezza della città di Cesenatico in pieno relax. L'hotel si trova in una zona tranquilla e panoramica, a due passi dal centro storico e dal famoso Portocanale Leonardesco. Inoltre, dista solo 50 metri dal mare e ben servita dai mezzi pubblici."
+      ]
+    },
+    {
+      "tag": "servizi",
+      "patterns": [
+        "Quali sono i servizi offerti dalla struttura?",
+        "Che servizi sono disponibili nell'hotel?",
+        "Ci sono servizi aggiuntivi disponibili?",
+        "Quali sono i servizi che posso trovare in questo hotel?",
+        "Cosa posso trovare nell'hotel?",
+        "Quali sono le opzioni di servizio disponibili?",
+        "C'è un portiere notturno?",
+        "C'è un servizio di lavanderia?",
+        "Ci sono convenzioni con ristoranti e locali?",
+        "C'è il wifi gratuito?",
+        "C'è il wifi?"
+      ],
+      "responses": [
+        "L'hotel dispone di tutti i servizi standard di un hotel 3 stelle, tra cui la presenza di un portiere notturno, la colazione a buffet ogni mattina e la connessione Wi-Fi gratuita in tutto l'edificio. Inoltre, ci sono numerose convenzioni con ristoranti e spiagge nelle vicinanze dell'hotel.",
+        "Gli ospiti dell'hotel possono usufruire dei servizi standard di un hotel 3 stelle, come la colazione a buffet ogni mattina, la connessione Wi-Fi gratuita in tutto l'edificio e la presenza di un portiere notturno. Inoltre, l'hotel ha delle convenzioni con alcuni ristoranti e spiagge della zona.",
+        "L'hotel mette a disposizione dei propri ospiti i servizi standard di un hotel 3 stelle, tra cui la connessione Wi-Fi gratuita in tutto l'edificio, la colazione a buffet ogni mattina e la presenza di un portiere notturno. Inoltre, ci sono delle convenzioni vantaggiose con alcuni ristoranti e stabilimenti balneari della zona.",
+        "Gli ospiti dell'hotel possono contare sui servizi standard di un hotel 3 stelle, come la colazione a buffet ogni mattina, la connessione Wi-Fi gratuita in tutto l'edificio e la presenza di un portiere notturno. Inoltre, l'hotel ha stipulato delle convenzioni speciali con alcuni ristoranti e spiagge della zona.",
+        "L'hotel offre ai propri ospiti tutti i servizi standard di un hotel 3 stelle, come la connessione Wi-Fi gratuita in tutto l'edificio, la colazione a buffet ogni mattina e la presenza di un portiere notturno. Inoltre, ci sono delle convenzioni con alcuni ristoranti e stabilimenti balneari della zona, che rendono ancora più piacevole il soggiorno degli ospiti.",
+        "Presso l'hotel sono disponibili tutti i servizi standard di un hotel 3 stelle, come la connessione Wi-Fi gratuita in tutto l'edificio, la colazione a buffet ogni mattina e la presenza di un portiere notturno. Inoltre, l'hotel ha delle convenzioni con alcuni ristoranti e spiagge della zona, che permettono agli ospiti di godere al meglio della loro vacanza."
+      ]
+    },
+    {
+      "tag": "check-in",
+      "patterns": [
+        "Quali sono gli orari di check-in e check-out?",
+        "A che ora posso fare il check-in?",
+        "Posso effettuare il check-in in anticipo?",
+        "Quali sono gli orari di arrivo e di partenza?",
+        "A che ora devo lasciare la stanza?",
+        "Posso fare il check-out in ritardo?"
+      ],
+      "responses": [
+        "Il check-in è disponibile dalle 14 alle 21 e il check-out entro le 10 del mattino. Tuttavia, su richiesta, è possibile effettuare il check-out in ritardo, ma solo se la camera è disponibile. In caso di arrivo prima dell'orario del check-in è posbbile depositare il bagaglio alla reception, andare in spiaggia e tornare a fare il check-in.",
+        "L'orario di check-in va dalle 14 alle 21, mentre il check-out deve essere effettuato entro le 10 del mattino. In caso di necessità, è possibile richiedere un check-out posticipato, ma solo se la camera è disponibile. In caso di arrivo prima dell'orario del check-in è posbbile depositare il bagaglio alla reception, andare in spiaggia e tornare a fare il check-in.",
+        "Gli ospiti sono invitati a effettuare il check-in dalle 14 alle 21 e il check-out entro le 10 del mattino. Se la camera è ancora disponibile, è possibile richiedere un check-out posticipato, previa conferma con la reception. In caso di arrivo prima dell'orario del check-in è posbbile depositare il bagaglio alla reception, andare in spiaggia e tornare a fare il check-in.",
+        "Il check-in presso l'hotel è possibile dalle 14 alle 21, mentre il check-out deve essere effettuato entro le 10 del mattino. Nel caso in cui gli ospiti avessero necessità di un check-out posticipato, si consiglia di contattare la reception per verificare la disponibilità. In caso di arrivo prima dell'orario del check-in è posbbile depositare il bagaglio alla reception, andare in spiaggia e tornare a fare il check-in.",
+        "Per il check-in presso l'hotel, gli ospiti possono presentarsi dalle 14 alle 21, mentre il check-out deve essere effettuato entro le 10 del mattino. Su richiesta, è possibile effettuare il check-out in ritardo, previa conferma con la reception e solo se la camera è disponibile. In caso di arrivo prima dell'orario del check-in è posbbile depositare il bagaglio alla reception, andare in spiaggia e tornare a fare il check-in.",
+        "L'hotel accoglie gli ospiti per il check-in dalle 14 alle 21 e richiede che il check-out sia effettuato entro le 10 del mattino. Qualora gli ospiti avessero necessità di un check-out posticipato, è possibile richiederlo previa disponibilità della camera, contattando la reception. In caso di arrivo prima dell'orario del check-in è posbbile depositare il bagaglio alla reception, andare in spiaggia e tornare a fare il check-in."
+      ]
+    },
+    {
+      "tag": "colazione",
+      "patterns": [
+        "La colazione è inclusa nel prezzo della camera?",
+        "C'è la colazione inclusa?",
+        "Quali sono le opzioni per la colazione?",
+        "Che tipo di colazione è servita?",
+        "Ci sono opzioni vegane o vegetariane per la colazione?",
+        "A che ora è servita la colazione?"
+      ],
+      "responses": [
+        "La colazione è disponibile a buffet dalle 7:30 alle 11 e viene inclusa nel prezzo per chi prenota la formula bed & breakfast. Per gli ospiti che scelgono altre formule, è possibile acquistare la colazione direttamente in hotel giorno per giorno. Il buffet offre una vasta scelta di opzioni dolci e salate, tra cui anche piatti adatti a chi segue una dieta vegana o senza glutine.",
+        "Il nostro hotel serve la colazione a buffet dalle 7:30 alle 11, che è inclusa nel prezzo per chi ha prenotato la formula bed & breakfast. Per gli altri ospiti, la colazione può essere acquistata separatamente in hotel. Il buffet offre numerose opzioni salate e dolci, e anche le persone vegane o celiache possono trovare piatti adatti alle loro esigenze.",
+        "Presso il nostro hotel, la colazione a buffet è disponibile dalle 7:30 alle 11, inclusa nel prezzo per i clienti bed & breakfast. Altrimenti, è possibile acquistarla in loco. Il buffet offre una vasta gamma di opzioni salate e dolci, comprese le opzioni vegane e senza glutine per soddisfare le esigenze di tutti i nostri ospiti."
+      ]
+    },
+    {
+      "tag": "prenotazioni",
+      "patterns": [
+        "Posso prenotare una camera?",
+        "Come posso prenotare una camera?",
+        "posso prenotare?",
+        "Come posso prenotare?",
+        "Come prenotare?",
+        "posso prenotare online?",
+        "Quando dovrei prenotare?",
+        "Posso effettuare una prenotazione online?",
+        "Ci sono sconti per le prenotazioni anticipati?",
+        "Quali sono le politiche di cancellazione per le prenotazioni?"
+      ],
+      "responses": [
+        "È possibile prenotare una camera direttamente sul nostro sito web. Per prenotare online, è necessario inserire le date di arrivo e partenza, scegliere la tipologia di camera e compilare il modulo di prenotazione. La cancellazione è gratuita fino a 7 giorni prima della data di arrivo. Ricordiamo che il prezzo delle camere è variabile in base alla richiesta di prenotazioni, quindi è consigliabile prenotare con anticipo.",
+        " Se desideri prenotare direttamente con noi, ti consigliamo di farlo attraverso il nostro sito web. In questo modo, potrai inserire le date di arrivo e partenza, scegliere il tipo di camera e compilare il modulo di prenotazione in modo semplice e veloce. La cancellazione è gratuita fino a 7 giorni prima dell'arrivo. Ricordiamo che il prezzo delle camere è variabile in base alla richiesta di prenotazioni, quindi è consigliabile prenotare con anticipo.",
+        "Prenotare una camera presso il nostro hotel è semplicissimo, puoi farlo direttamente online. Lì potrai selezionare le date desiderate, il tipo di camera che preferisci e compilare il modulo di prenotazione online. Ti ricordiamo che la cancellazione è gratuita fino a 7 giorni prima della data di arrivo e che il prezzo delle camere è variabile in base alla richiesta di prenotazioni, quindi è consigliabile prenotare con anticipo.",
+        "Siamo felici di offrirti la possibilità di prenotare la tua camera direttamente dal nostro sito web. Basta inserire le date di arrivo e partenza, scegliere la tipologia di camera e compilare il modulo di prenotazione online. La cancellazione è gratuita fino a 7 giorni prima dell'arrivo. Ricordiamo che il prezzo delle camere è variabile in base alla richiesta di prenotazioni, quindi è consigliabile prenotare con anticipo.",
+        "Vuoi prenotare una camera nel nostro hotel? Nulla di più facile, puoi farlo direttamente dal nostro sito web. Seleziona le date, la tipologia di camera e compila il modulo di prenotazione online. Ricorda che la cancellazione è gratuita fino a 7 giorni prima della data di arrivo. Ricordiamo che il prezzo delle camere è variabile in base alla richiesta di prenotazioni, quindi è consigliabile prenotare con anticipo.",
+        "Per prenotare una camera presso il nostro hotel, ti consigliamo di visitare il nostro sito web ufficiale. Lì potrai selezionare le date desiderate, il tipo di camera e compilare il modulo di prenotazione online. Ti ricordiamo che la cancellazione è gratuita fino a 7 giorni prima della data di arrivo e che il prezzo delle camere può variare in base alla richiesta di prenotazioni."
+      ]
+    },
+    {
+      "tag": "Umore",
+      "patterns": [
+        "Come stai?",
+        "Come va?",
+        "Come stai oggi?",
+        "Tutto bene?",
+        "Come sta andando?",
+        "Stai bene?",
+        "Stai male?"
+      ],
+      "responses": [
+        "Tutto bene, grazie!",
+        "Tutto bene, grazie per chiedere!",
+        "Sto benissimo, grazie!",
+        "Sto bene, grazie per chiedere!"
+      ]
+    },
+    {
+      "tag": "animali",
+      "patterns": [
+        "Accettate animali domestici?",
+        "Posso portare il mio cane?",
+        "Posso portare il mio gatto?",
+        "Posso portare il mio cane o il mio gatto?",
+        "Posso portare il mio animale domestico?",
+        "è possibile portare animali domestici?",
+        "siete pet friendly?"
+      ],
+      "responses": [
+        "Certo! Che vacanza sarebbe senza il tuo amico a quattro zampe? L'hotel accetta animali domestici con il pagamento una tantum di 10 euro per le pulizie finali di fine soggiorno.",
+        "Sì, l'hotel accetta animali domestici con il pagamento di una tassa di 10 euro per le pulizie finali di fine soggiorno.",
+        "Assolutamente! I tuoi amici a quattro zampe sono i benvenuti. L'hotel richiede solo una tassa aggiuntiva di 10 euro per le pulizie di fine soggiorno.",
+        "Sì, l'hotel accetta animali domestici. Devi solo pagare una tassa unica di 10 euro per le pulizie finali al momento del check-out.",
+        "Certamente! Non c'è bisogno di lasciare il tuo amico peloso a casa. Tieni solo presente che l'hotel addebita una piccola tassa di 10 euro per le pulizie di fine soggiorno.",
+        "Sì, è permesso portare gli animali domestici in hotel. Tuttavia, l'hotel addebita una piccola tassa di 10 euro per le pulizie di fine soggiorno.",
+        "Assolutamente! L'hotel è lieto di accogliere anche i tuoi animali domestici. Si applica solo una tassa aggiuntiva di 10 euro per le pulizie di fine soggiorno."
+      ]
+    },
+    {
+      "tag": "biancheria",
+      "patterns": [
+        "La biancheria è compresa nel prezzo?",
+        "La biancheria da letto è fornita gratuitamente?",
+        "Devo portare la mia biancheria da letto o è inclusa nel prezzo?",
+        "Il prezzo della stanza include la biancheria?",
+        "Sono necessari costi aggiuntivi per la fornitura di biancheria?",
+        "La biancheria è inclusa nel prezzo della stanza o devo pagare extra per questo servizio?"
+      ],
+      "responses": [
+        "La biancheria è inclusa nel prezzo del soggiorno.",
+        "La biancheria è compresa nel prezzo e non ci sono costi aggiuntivi.",
+        "Non devi preoccuparti di portare nulla da casa, la biancheria è inclusa nel prezzo del soggiorno.",
+        "La biancheria viene fornita gratuitamente ai nostri ospiti.",
+        "La biancheria è già inclusa nel prezzo, non devi preoccuparti di pagare alcunché in più.",
+        "La biancheria è inclusa nella tariffa del soggiorno senza alcun costo aggiuntivo."
+      ]
+    },
+    {
+      "tag": "animazione",
+      "patterns": [
+        "C’è un servizio di animazione?",
+        "C’è un servizio di animazione per bambini?",
+        "C’è un servizio di animazione per bambini e adulti?",
+        "è presente l'animazione?",
+        "fate animazione?",
+        "fate spettacoli?",
+        "fate serate a tema?",
+        "fate serate a tema per bambini?"
+      ],
+      "responses": [
+        "Ci dispiace, il nostro hotel non offre servizi di animazione e/o serate a tema",
+        "No, non offriamo servizi di animazione e/o serate a tema",
+        "Siamo spiacenti, ma il nostro hotel non organizza serate a tema o servizi di animazione.",
+        "Purtroppo no, non offriamo attività di animazione o serate a tema nel nostro hotel.",
+        "Siamo un hotel tranquillo e rilassante, senza servizi di animazione o serate a tema.",
+        "La nostra struttura non prevede servizi di animazione o serate a tema per i nostri ospiti."
+      ]
+    },
+    {
+      "tag": "esistenza",
+      "patterns": [
+        "chi sei?",
+        "Cosa sei?",
+        "Come ti chiami?",
+        "esisti?",
+        "che cosa sei?",
+        "chi sei in realtà?",
+        "Nome",
+        "tuo nome?"
+      ],
+      "responses": [
+        "Io sono una piccola intelligenza artificiale (AI) sviluppata per rispondere alle tue domande :)",
+        "Sono un'IA (Intelligenza Artificiale) programmata per rispondere alle tue domande. Come posso aiutarti?",
+        "Sono un assistente virtuale AI sviluppato per fornirti risposte alle tue domande. Di cosa hai bisogno?",
+        "Sono un'AI creata per assisterti nelle tue richieste. Quali informazioni stai cercando?",
+        "Sono un'intelligenza artificiale sviluppata per fornirti supporto informativo. In cosa posso esserti utile?",
+        "Sono un bot conversazionale AI creato per aiutarti. Cosa posso fare per te oggi?"
+      ]
+    },
+    {
+      "tag": "parcheggio",
+      "patterns": [
+        "è presente il parcheggio?",
+        "il parcheggio è gratuito?",
+        "posso parcheggiare la macchina in hotel?",
+        "dove posso parcheggiare?",
+        "dove posso lasciare la macchina?",
+        "avete parcheggio interno?"
+      ],
+      "responses": [
+        "L'hotel dispone di un parcheggio interno a pagamento a lprezzo di 7€ a notte, prenotabile in loco se disponibile, altrimenti è possibile parcheggiare in strada nei parcheggi gratuiti in strada.",
+        "Sì, l'hotel dispone di un parcheggio interno a pagamento, al costo di 7€ a notte, prenotabile in loco se disponibile. Tuttavia, se preferisci, è possibile parcheggiare gratuitamente sulla strada, nei parcheggi pubblici disponibili.",
+        "Sì, l'hotel mette a disposizione dei propri ospiti un parcheggio interno a pagamento, al prezzo di 7€ a notte. In alternativa, ci sono parcheggi pubblici gratuiti disponibili lungo la strada.",
+        "Per gli ospiti in auto, l'hotel dispone di un parcheggio interno a pagamento al costo di 7€ a notte, prenotabile in loco. Tuttavia, se preferisci risparmiare, puoi parcheggiare gratuitamente sulla strada, dove ci sono parcheggi pubblici disponibili.",
+        "Il nostro hotel offre un parcheggio interno a pagamento, al prezzo di 7€ a notte, che puoi prenotare al momento del check-in. Se invece vuoi risparmiare, ci sono parcheggi pubblici gratuiti disponibili sulla strada."
+      ]
+    }
+  ]
+}
