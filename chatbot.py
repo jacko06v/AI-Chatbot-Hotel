@@ -6,79 +6,81 @@ import numpy as np
 from tensorflow import keras
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
-lemmatizer = WordNetLemmatizer()
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
+# carica il file JSON con i dati di addestramento
+with open('dataset.json') as file:
+    data = json.load(file)
+
+# crea le liste di parole, le classi e i documenti di addestramento
 words = []
 classes = []
 documents = []
 ignore_chars = ['?', '.', '!']
-# carica il file JSON con i dati di addestramento
-with open('dataset.json') as file:
-        data = json.load(file)
 
-def trainModel():
-    # crea le liste di parole, le classi e i documenti di addestramento
-    for intent in data['intents']:
-        for pattern in intent['patterns']:
-            # tokenizza ogni parola nella frase
-            tokens = nltk.word_tokenize(pattern)
-            words.extend(tokens)
-            # aggiunge il documento alla lista dei documenti
-            documents.append((tokens, intent['tag']))
-            # aggiunge la classe alla lista delle classi
-            if intent['tag'] not in classes:
-                classes.append(intent['tag'])
+lemmatizer = WordNetLemmatizer()
 
-    # lemmatizza le parole e rimuove i duplicati
-    words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ignore_chars]
-    words = sorted(list(set(words)))
-    classes = sorted(list(set(classes)))
+for intent in data['intents']:
+    for pattern in intent['patterns']:
+        # tokenizza ogni parola nella frase
+        tokens = nltk.word_tokenize(pattern)
+        words.extend(tokens)
+        # aggiunge il documento alla lista dei documenti
+        documents.append((tokens, intent['tag']))
+        # aggiunge la classe alla lista delle classi
+        if intent['tag'] not in classes:
+            classes.append(intent['tag'])
 
-    # crea il training set
-    training_data = []
-    output_empty = [0] * len(classes)
+# lemmatizza le parole e rimuove i duplicati
+words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ignore_chars]
+words = sorted(list(set(words)))
+classes = sorted(list(set(classes)))
 
-    for document in documents:
-        bag = []
-        word_patterns = document[0]
-        # lemmatizza le parole del pattern
-        word_patterns = [lemmatizer.lemmatize(word.lower()) for word in word_patterns]
-        # crea la matrice di parole
-        for word in words:
-            bag.append(1) if word in word_patterns else bag.append(0)
-        # crea l'output
-        output_row = list(output_empty)
-        output_row[classes.index(document[1])] = 1
-        training_data.append([bag, output_row])
+# crea il training set
+training_data = []
+output_empty = [0] * len(classes)
 
-    # mescola il training set
-    np.random.shuffle(training_data)
-    training_data = np.array(training_data)
+for document in documents:
+    bag = []
+    word_patterns = document[0]
+    # lemmatizza le parole del pattern
+    word_patterns = [lemmatizer.lemmatize(word.lower()) for word in word_patterns]
+    # crea la matrice di parole
+    for word in words:
+        bag.append(1) if word in word_patterns else bag.append(0)
+    # crea l'output
+    output_row = list(output_empty)
+    output_row[classes.index(document[1])] = 1
+    training_data.append([bag, output_row])
 
-    # definisce il modello di rete neurale
-    model = keras.Sequential([
-        Dense(128, input_shape=(len(words),), activation='relu'),
-        Dropout(0.5),
-        Dense(64, activation='relu'),
-        Dropout(0.5),
-        Dense(len(classes), activation='softmax')
-    ])
+# mescola il training set
+np.random.shuffle(training_data)
+training_data = np.array(training_data)
 
-    # compila il modello
-    sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
-    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+# definisce il modello di rete neurale
+model = keras.Sequential([
+    Dense(128, input_shape=(len(words),), activation='relu'),
+    Dropout(0.5),
+    Dense(64, activation='relu'),
+    Dropout(0.5),
+    Dense(len(classes), activation='softmax')
+])
 
-    # addestra il modello
-    history = model.fit(training_data[:,0].tolist(), training_data[:,1].tolist(), epochs=1000, batch_size=50, verbose=1)
+# compila il modello
+sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-    # salva il modello
-    model.save('chatbot_model')
+# addestra il modello
+history = model.fit(training_data[:,0].tolist(), training_data[:,1].tolist(), epochs=1000, batch_size=50, verbose=1)
 
+# salva il modello
+model.save('chatbot_model')
+
+# carica il modello
+model = keras.models.load_model('chatbot_model')
 
 # definisce la funzione per processare l'input dell'utente e restituire una risposta
 def process_input(input_text):
-    # carica il modello
-    model = keras.models.load_model('chatbot_model')
     # tokenizza l'input
     input_words = nltk.word_tokenize(input_text)
     # lemmatizza le parole
@@ -130,3 +132,68 @@ def process_response(input_text):
     # salva la domanda
     save_undefined_question(input_text)
     return "non ho capito"
+
+
+class RequestHandler_httpd(BaseHTTPRequestHandler):
+    
+        def do_GET(self):
+            self.send_response(200)
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            self.wfile.write(bytes('''
+            Server Hotel Devon chatbot: Service up and running.<br/><br/> Please, use the right protocol to communicate at this address. <br/><br/>To know more, feel free to contact us at the address: jacomosconi@gmail.com or on jacopomosconi.com.<br/><br/> Cu Mate!<br/><br/><pre style="line-height: 0.7;">
+               ,'``.._   ,'``. <br/>
+              :,--._:)\,:,._,.:       All Glory to <br/>
+              :`--,''   :`...';\      the HYPNO TOAD! <br/>
+               `,'       `---'  `. <br/>
+               /                 :<br/> 
+              /                   \<br/>
+            ,'                     :\.___,-.<br/>
+           `...,---'``````-..._    |:       \<br/>
+             (                 )   ;:    )   \  _,-.<br/>
+              `.              (   //          `'    \<br/>
+               :               `.//  )      )     , ;<br/>
+             ,-|`.            _,'/       )    ) ,' ,'<br/>
+            (  :`.`-..____..=:.-':     .     _,' ,'<br/>
+             `,'\ ``--....-)='    `._,  \  ,') _ '``._<br/>
+          _.-/ _ `.       (_)      /     )' ; / \ \`-.'<br/>
+         `--(   `-:`.     `' ___..'  _,-'   |/   `.)<br/>
+             `-. `.`.``-----``--,  .'<br/>
+               |/`.\`'        ,','); <br/>
+                   `         (/  (/<br/>
+</pre>
+'''
+, "utf-8"))
+            
+        def do_POST(self):
+            message = self.path.split('?message=')[1]
+            message = message.replace('-', ' ')
+
+            self.path = self.path.split('?')[0]
+
+
+            if self.path == '/chat':
+                response = process_response(message)
+                self.send_response(200)
+                self.send_header('Content-type', 'text/plain; charset=utf-8')
+                self.end_headers()
+                self.wfile.write(response.encode('utf-8'))
+            else:
+                self.send_response(404)
+                self.send_header('Content-type', 'text/plain; charset=utf-8')
+                self.end_headers()
+                self.wfile.write('Not found'.encode('utf-8'))
+          
+
+    
+        
+
+def run():
+    print('starting server...')
+    server_address = ('localhost', 8080)
+    httpd = HTTPServer(server_address, RequestHandler_httpd)
+    print('running server...')
+    httpd.serve_forever()
+
+run()
+
