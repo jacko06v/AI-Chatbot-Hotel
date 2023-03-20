@@ -17,6 +17,7 @@ with open('dataset.json') as file:
         data = json.load(file)
 
 def trainModel():
+    global words, classes, documents, ignore_chars
     # crea le liste di parole, le classi e i documenti di addestramento
     for intent in data['intents']:
         for pattern in intent['patterns']:
@@ -77,6 +78,7 @@ def trainModel():
 
 # definisce la funzione per processare l'input dell'utente e restituire una risposta
 def process_input(input_text):
+    global words, classes, documents, ignore_chars
     # carica il modello
     model = keras.models.load_model('chatbot_model')
     # tokenizza l'input
