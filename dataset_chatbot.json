@@ -95,7 +95,13 @@
         "Posso effettuare il check-in in anticipo?",
         "Quali sono gli orari di arrivo e di partenza?",
         "A che ora devo lasciare la stanza?",
-        "Posso fare il check-out in ritardo?"
+        "Posso fare il check-out in ritardo?",
+        "orario check in",
+        "orario check out",
+        "orario arrivo",
+        "orario partenza",
+        "orario check-in",
+        "orario check-out"
       ],
       "responses": [
         "Il check-in è disponibile dalle 14 alle 21 e il check-out entro le 10 del mattino. Tuttavia, su richiesta, è possibile effettuare il check-out in ritardo, ma solo se la camera è disponibile. In caso di arrivo prima dell'orario del check-in è posbbile depositare il bagaglio alla reception, andare in spiaggia e tornare a fare il check-in.",
@@ -262,6 +268,21 @@
         "Per gli ospiti in auto, l'hotel dispone di un parcheggio interno a pagamento al costo di 7€ a notte, prenotabile in loco. Tuttavia, se preferisci risparmiare, puoi parcheggiare gratuitamente sulla strada, dove ci sono parcheggi pubblici disponibili.",
         "Il nostro hotel offre un parcheggio interno a pagamento, al prezzo di 7€ a notte, che puoi prenotare al momento del check-in. Se invece vuoi risparmiare, ci sono parcheggi pubblici gratuiti disponibili sulla strada."
       ]
+    },
+    {
+      "tag": "preventivo",
+      "patterns": [
+        "Ho bisogno di prenotare una camera per 2 persone dal 10 al 12 settembre. Avete disponibilità?",
+        "Quanto costa una camera doppia dal 28 maggio al 5 giugno?",
+        "Vorrei prenotare una camera matrimoniale dal 10 al 15 marzo. Qual è il prezzo?",
+        "Costo di una camera quadrupla dal 23/12 al 2/01?",
+        "Quanto viene una camera singola dal 5 al 10 novembre?",
+        "Quanto costa una camera doppia dal 15 al 22 settembre?",
+        "costo di una camera singola dal 10 luglio al 21 luglio?",
+        "quanto viene una camera tripla dal 24/07 al 3/08?",
+        "quanto costa una camera doppia dal 2/08 al 5/08?"
+      ],
+      "responses": ["ok"]
     }
   ]
 }

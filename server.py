@@ -9,7 +9,7 @@ class RequestHandler_httpd(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/html")
             self.end_headers()
             self.wfile.write(bytes('''
-            Server Hotel Devon chatbot: Service up and running.<br/><br/> Please, use the right protocol to communicate at this address. <br/><br/>To know more, feel free to contact us at the address: jacomosconi@gmail.com or on jacopomosconi.com.<br/><br/> Cu Mate!<br/><br/><pre style="line-height: 0.7;">
+            Server Hotel --- chatbot: Service up and running.<br/><br/> Please, use the right protocol to communicate at this address. <br/><br/>To know more, feel free to contact us at the address: jacomosconi@gmail.com or on jacopomosconi.com.<br/><br/> Cu Mate!<br/><br/><pre style="line-height: 0.7;">
                ,'``.._   ,'``. <br/>
               :,--._:)\,:,._,.:       All Glory to <br/>
               :`--,''   :`...';\      the HYPNO TOAD! <br/>
@@ -36,6 +36,7 @@ class RequestHandler_httpd(BaseHTTPRequestHandler):
         def do_POST(self):
             message = self.path.split('?message=')[1]
             message = message.replace('-', ' ')
+            message = message.replace('%20', ' ')
 
             self.path = self.path.split('?')[0]
 

@@ -6,6 +6,8 @@ import numpy as np
 from tensorflow import keras
 from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import SGD
+from extract_dates_rooms import print_info
+import datetime
 lemmatizer = WordNetLemmatizer()
 
 words = []
@@ -13,7 +15,7 @@ classes = []
 documents = []
 ignore_chars = ['?', '.', '!']
 # carica il file JSON con i dati di addestramento
-with open('dataset.json') as file:
+with open('dataset_chatbot.json') as file:
         data = json.load(file)
 
 def trainModel():
@@ -70,7 +72,7 @@ def trainModel():
     model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
     # addestra il modello
-    history = model.fit(training_data[:,0].tolist(), training_data[:,1].tolist(), epochs=1000, batch_size=50, verbose=1)
+    history = model.fit(training_data[:,0].tolist(), training_data[:,1].tolist(), epochs=2000, batch_size=50, verbose=1)
 
     # salva il modello
     model.save('chatbot_model')
@@ -106,23 +108,37 @@ def process_input(input_text):
 def save_undefined_question(question):
     # se il file questions.json non esiste, lo crea e lo inizializza, altrimenti lo carica
     try:
-        with open('questions.json') as file:
+        with open('unanswered_questions.json') as file:
             questions = json.load(file)
     except:
         questions = []
     # aggiunge la domanda alla lista
-    questions.append(question)
+    questions.append({
+        'question': question,
+        'date': datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    })
     # salva la lista nel file
-    with open('questions.json', 'w') as file:
+    with open('unanswered_questions.json', 'w') as file:
         json.dump(questions, file)
 
 
 
 # definisce la funzione per rispondere all'input dell'utente
 def process_response(input_text):
+    print(input_text)
     # ottiene la risposta
     response = process_input(input_text)
     print(response)
+    if response == "preventivo":
+        frase, obj = print_info(input_text)
+        camere = ""
+        if obj == False:
+            return frase
+        for camera in obj:
+            camere = camere + "Tipologia camera: " + camera["name"] + "\nPrezzo: " + str(camera["price"]) + "\n"
+        #create sentence
+        return frase + "\n"  + ("Sono disponibili " + str(len(obj)) + " tipologie di camere:\n" + camere) if len(obj) > 1 else ("è disponibile " + str(len(obj)) + " tipologia di camera:\n" + camere) 
+            
     # cerca la risposta nel file JSON
     for intent in data['intents']:
         if intent['tag'] == response:
@@ -132,3 +148,4 @@ def process_response(input_text):
     # salva la domanda
     save_undefined_question(input_text)
     return "non ho capito"
+
